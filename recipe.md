@@ -1,64 +1,75 @@
-# {{PROBLEM}} Function Design Recipe
+# {{PROBLEM}} Class Design Recipe
 
 Copy this into a `recipe.md` in your project and fill it out.
 
 ## 1. Describe the Problem
 
-As a user
-So that I can find my tasks among all my notes
-I want to check if a line from my notes includes the string `#TODO`.
+_Put or write the user story here. Add any clarifying notes you might have._
 
-## 2. Design the Function Signature
+## 2. Design the Class Interface
 
-_Include the name of the function, its parameters, return value, and side effects._
-
-```python
-
-
-    """
-
-
-    """
-    pass # Test-driving means _not_ writing any code here yet.
-```
-
-## 3. Create Examples as Tests
-
-_Make a list of examples of what the function will take and return._
+_Include the initializer, public properties, and public methods with all parameters, return values, and side-effects._
 
 ```python
 # EXAMPLE
 
-"""
-Given a valid input
-Returns a string
-"""
-find_task(notes)=> str
+class Reminder:
+    # User-facing properties:
+    #   name: string
+
+    def __init__(self, name):
+        # Parameters:
+        #   name: string
+        # Side effects:
+        #   Sets the name property of the self object
+        pass # No code here yet
+
+    def remind_me_to(self, task):
+        # Parameters:
+        #   task: string representing a single task
+        # Returns:
+        #   Nothing
+        # Side-effects
+        #   Saves the task to the self object
+        pass # No code here yet
+
+    def remind(self):
+        # Returns:
+        #   A string reminding the user to do the task
+        # Side-effects:
+        #   Throws an exception if no task is set
+        pass # No code here yet
+```
+
+## 3. Create Examples as Tests
+
+_Make a list of examples of how the class will behave in different situations._
+
+``` python
+# EXAMPLE
 
 """
-Given a valid '#todo' in notes
-Returns a string
+Given a name and a task
+#remind reminds the user to do the task
 """
-find_task(notes)=> 'todo found!'
+reminder = Reminder("Kay")
+reminder.remind_me_to("Walk the dog")
+reminder.remind() # => "Walk the dog, Kay!"
 
 """
-Given a valid '#todo' not in notes
-Returns a string
+Given a name and no task
+#remind raises an exception
 """
-find_task(notes)=> 'todo not found!'
+reminder = Reminder("Kay")
+reminder.remind() # raises an error with the message "No task set."
 
 """
+Given a name and an empty task
+#remind still reminds the user to do the task, even though it looks odd
 """
-Given an empty string 
-It throws an error
-"""
-to_do('') => throws an error
-
-"""
-Given a None value
-It throws an error
-"""
-to_do(None) => throws an error
+reminder = Reminder("Kay")
+reminder.remind_me_to("")
+reminder.remind() # => ", Kay!"
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
@@ -66,17 +77,3 @@ _Encode each example as a test. You can add to the above list as you go._
 ## 4. Implement the Behaviour
 
 _After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour._
-
-Here's an example for you to start with:
-
-```python
-# EXAMPLE
-
-
-"""
-Given a lower and an uppercase word
-It returns a list with the uppercase word
-"""
-
-
-Ensure all test function names are unique, otherwise pytest will ignore them!
