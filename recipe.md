@@ -46,36 +46,36 @@ _Make a list of examples of how the class will behave in different situations._
 
 ``` python
 
-"""
-Given a track (string), add_track()
-Add the track to the playlist 
-"""
-my_music_ = music_music_()
-my_music_.add("Track1")
-my_music_.playlist => ["Track1"]
+# """
+# Given a track (string), add_track()
+# Add the track to the playlist 
+# """
+# my_music = music()
+# my_music.add_track("Track1")
+# my_music.playlist => ["Track1"]
 
-"""
-Given a track (non-string), add_track()
-Raises an error -> "Input valid track!"
-"""
-my_music_ = music_music_()
-my_music_.add(12345) => error
+# """
+# Given a track (non-string), add_track()
+# Raises an error -> "Input valid track!"
+# """
+# my_music = music()
+# my_music.add_track(12345) => error
 
-"""
-Given a track (empty string), add_track()
-Raises an error -> "Input valid track!"
-"""
-my_music_ = music_music_()
-my_music_.add("") => error
+# """
+# Given a track (empty string), add_track()
+# Raises an error -> "Input valid track!"
+# """
+# my_music = music()
+# my_music.add_track("") => error
 
 """
 Given multiple tracks (string) have been added to the playlist, see_playlist()
 Return the playlist (as a list)
 """
-my_music_ = music_music_()
-my_music_.add("Track1")
-my_music_.add("Track2")
-my_music_.see_playlist => ["Track1", "Track2"]
+my_music = music()
+my_music.add_track("Track1")
+my_music.add_track("Track2")
+my_music.see_playlist => ["Track1", "Track2"]
 
 
 
